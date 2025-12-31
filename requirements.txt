@@ -1,2 +1,12 @@
 Django
+
+# Rest framework
+djangorestframework
+markdown
+django-filter
+djangorestframework-simplejwt
+drf-spectacular
+drf-spectacular[sidecar]
+
+# Postgresql
 psycopg2-binary
