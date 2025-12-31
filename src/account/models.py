@@ -1,7 +1,16 @@
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import UserManager as AbstractUserManager
 from django.db import models
 
 from common.models import TimestampMixin, UUIDPrimaryMixin
+
+
+class UserManager(AbstractUserManager):
+    @classmethod
+    def normalize_email(cls, email):
+        if email is None:
+            return None
+        return super().normalize_email(email)
 
 
 class AuthUser(AbstractUser, TimestampMixin, UUIDPrimaryMixin):
@@ -16,6 +25,8 @@ class AuthUser(AbstractUser, TimestampMixin, UUIDPrimaryMixin):
     # Remove some fields
     first_name = None
     last_name = None
+
+    objects = UserManager()
 
     def __str__(self) -> str:
         return f"<User: {self.id}>"
