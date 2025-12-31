@@ -5,4 +5,11 @@ ENV PYTHONUNBUFFERED=1
 COPY requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN pip install gunicorn
+
 WORKDIR /src
+
+COPY /src /src
+
+ENV PORT=80
+CMD ["sh", "-c", "gunicorn main.wsgi:application --bind 0.0.0.0:${PORT}"]
