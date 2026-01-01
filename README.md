@@ -29,3 +29,11 @@
     db_name:    data-local
     ```
 - Access to http://localhost:8000/api/docs to view API document
+
+<br>
+
+### Other
+- You can install Python stubs to upgrade Pylance
+    ```bash
+    pip install django-stubs djangorestframework-stubs
+    ```
