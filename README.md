@@ -28,7 +28,7 @@
     password:   WHnn6WhONrmRrP0HoZ38dmcrVvd1cu67
     db_name:    data-local
     ```
-- Access to http://localhost:8000/api/docs to view API document
+- Access to http://localhost/api/docs to view API document
 
 <br>
 
